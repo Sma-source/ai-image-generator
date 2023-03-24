@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Card, FormField, Loader } from "../components";
 
 const Home = () => {
+  const [loading, setLoading] = useState(false);
   return (
     <section className="max-w-7xl mx-auto">
       <div>
@@ -22,6 +23,16 @@ const Home = () => {
           name="text"
           placeholder="Search something..."
         />
+      </div>
+
+      <div className="mt-10">
+        {loading ? (
+          <div className="flex justify-center items-center">
+            <Loader />
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </section>
   );
