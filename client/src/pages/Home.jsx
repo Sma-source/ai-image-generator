@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Card, FormField, Loader } from "../components";
+
 const Home = () => {
   return (
     <section className="max-w-7xl mx-auto">
