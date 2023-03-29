@@ -66,6 +66,12 @@ const CreatePost = () => {
                 className="w-9/12 h-9/12 object-contain opacity-40"
               /> // preview placeholder
             )}
+
+            {generatingImg && (
+              <div className="absolute inset-0 z-0 flex justify-center items-center bg-[rgba(0,0,0,0.5)] rounded-lg">
+                <Loader />
+              </div> // loader when the image is being generated
+            )}
           </div>
         </div>
       </form>
