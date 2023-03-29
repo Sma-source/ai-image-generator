@@ -38,6 +38,8 @@ const CreatePost = () => {
             type="text"
             name="name"
             placeholder="Ex., john doe"
+            value={form.name}
+            handleChange={handleChange}
           />
 
           <FormField
@@ -45,6 +47,10 @@ const CreatePost = () => {
             type="text"
             name="prompt"
             placeholder="An Impressionist oil painting of sunflowers in a purple vase…"
+            value={form.prompt}
+            handleChange={handleChange}
+            handleSurpriseMe={handleSurpriseMe}
+            isSurpriseMe
           />
         </div>
       </form>
