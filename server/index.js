@@ -7,3 +7,9 @@ dotenv.config();
 const app = express(); // init express app
 app.use(cors()); // add additional middleware
 app.use(express.json({ limit: "50mb" })); // add additional middleware
+
+app.get("/", async (req, res) => {
+  res.status(200).json({
+    message: "Hello from DALL.E !",
+  });
+}); //routes
