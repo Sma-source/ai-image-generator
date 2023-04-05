@@ -13,3 +13,9 @@ app.get("/", async (req, res) => {
     message: "Hello from DALL.E !",
   });
 }); //routes
+
+const startServer = async () => {
+  app.listen(8080, () => console.log("Server started on port 8080"));
+};
+
+startServer();
