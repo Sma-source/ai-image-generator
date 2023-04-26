@@ -26,7 +26,7 @@ router.route("/").post(async (req, res) => {
       response_format: "b64_json",
     }); // generate image
 
-    const image = aiResponse.data.data[0].image.b64_json; // get image
+    const image = aiResponse.data.data[0].b64_json; // get image
 
     res.status(200).json({ photo: image }); // sending back image to frontend
   } catch (error) {
