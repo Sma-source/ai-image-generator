@@ -16,4 +16,25 @@ router.route("/").get((req, res) => {
   res.send("Hello from DALL-E!");
 }); // testing route
 
+router.route("/").post(async (req, res) => {
+  try {
+    const { prompt } = req.body; //prompt create from frontend side
+    const aiResponse = await openai.createImage({
+      prompt,
+      n: 1,
+      size: "1024x1024",
+      response_format: "b64_json",
+    }); // generate image
+
+    const image = aiResponse.data.data[0].image.b64_json; // get image
+
+    res.status(200).json({ photo: image }); // sending back image to frontend
+  } catch (error) {
+    console.log(error);
+    res
+      .status(500)
+      .send(error?.response.data.error.message || "Something went wrong");
+  }
+});
+
 export default router;
